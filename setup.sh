@@ -24,25 +24,25 @@ echo "Install our piVidLooper script..."
 echo "=========================="
 mkdir /piVidLooper
 cd /piVidLooper
-wget -N https://raw.githubusercontent.com/jonwitts/pi_video_looper/master/piVidLooper.sh
+wget -N https://raw.githubusercontent.com/jonwitts/pi_vid_looper/master/piVidLooper.sh
 chmod +x ./piVidLooper.sh
 
 # copy our shutdown Python script
 echo "Install our Python shutdown script..."
 echo "=========================="
-wget -N https://raw.githubusercontent.com/jonwitts/pi_video_looper/master/pythonShutdown.py
+wget -N https://raw.githubusercontent.com/jonwitts/pi_vid_looper/master/pythonShutdown.py
 chmod +x ./pythonShutdown.py
 
 # copy and activate our systemd definitions
 echo "Copy and activate our systemd definitions..."
 echo "=========================="
 # piVidLooper service
-wget -N https://raw.githubusercontent.com/jonwitts/pi_video_looper/master/piVidLooper.service
+wget -N https://raw.githubusercontent.com/jonwitts/pi_vid_looper/master/piVidLooper.service
 mv ./piVidLooper.service /lib/systemd/system/piVidLooper.service
 chmod 644 /lib/systemd/system/piVidLooper.service
 
 # pythonShutdown service
-wget -N https://raw.githubusercontent.com/jonwitts/pi_video_looper/master/pythonShutdown.service
+wget -N https://raw.githubusercontent.com/jonwitts/pi_vid_looper/master/pythonShutdown.service
 mv ./pythonShutdown.service /lib/systemd/system/pythonShutdown.service
 chmod 644 /lib/systemd/system/pythonShutdown.service
 
