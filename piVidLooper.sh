@@ -12,12 +12,9 @@
 setterm --cursor off
 clear
 
-# we assume that there is one USB drive attached at /dev/sda1
-pmount -r /dev/sda1 > /dev/null 2>&1
-
 # now search the USB drive for mp4 files
 shopt -s nullglob
-for file in /dev/sda1/*.mp4 ; do
+for file in /media/sda1/*.mp4 ; do
     filePlay=$file
 done
 
