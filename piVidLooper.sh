@@ -12,6 +12,12 @@
 setterm --cursor off
 clear
 
+# create mount point
+sudo mkdir /media/sda1
+
+# now mount the USB drive
+sudo mount /dev/sda1 /media/sda1
+
 # now search the USB drive for mp4 files
 shopt -s nullglob
 for file in /media/sda1/*.mp4 ; do
