@@ -12,12 +12,12 @@ fi
 # update and upgrade existing packages
 echo "Upgrading existing packages"
 echo "=========================="
-apt-get update && apt-get dist-upgrade -y
+apt update && apt dist-upgrade -y && apt autoremove -y
 
 # install our required packages
 echo "Installing dependencies..."
 echo "=========================="
-apt-get install git wget omxplayer util-linux python3 python3-gpiozero exfat-fuse exfat-utils -y
+apt-get install git wget omxplayer util-linux python3 python3-gpiozero python3-pip exfat-fuse exfat-utils -y
 
 # copy our bash script
 echo "Install our piVidLooper script..."
@@ -51,10 +51,13 @@ systemctl daemon-reload
 systemctl enable piVidLooper.service
 systemctl enable pythonShutdown.service
 
-# hide our user prompt and clear the screen at start up
-#echo 'PS1=""' >> /home/pi/.bashrc
-#echo "setterm --cursor off" >> /home/pi/.bashrc
-#echo "clear" >> /home/pi/.bashrc
+# Install and configure the Pimoroni Fan Shim
+cd /
+git clone https://github.com/pimoroni/fanshim-python
+cd fanshim-python
+./install.sh
+cd examples
+sudo ./install-service.sh --on-threshold 65 --off-threshold 55 --delay 2
 
 # up our GPU RAM
 echo "gpu_mem=512" >> /boot/config.txt
