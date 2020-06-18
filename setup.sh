@@ -17,7 +17,7 @@ apt-get update && apt-get dist-upgrade -y
 # install our required packages
 echo "Installing dependencies..."
 echo "=========================="
-apt-get install git wget omxplayer util-linux pmount python3 python3-gpiozero exfat-fuse exfat-utils -y
+apt-get install git wget omxplayer util-linux python3 python3-gpiozero exfat-fuse exfat-utils -y
 
 # copy our bash script
 echo "Install our piVidLooper script..."
