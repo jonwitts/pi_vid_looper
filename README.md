@@ -17,13 +17,12 @@ To safely shut your Raspberry Pi down, press and hold the button for three secon
 
 Tested against Raspbain Buster Lite. It should also work with the full Raspbian Buster but it makes more sense to use the Lite version as you will no doubt want to run this headless... You can get the last release of Raspbian Buster from here: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/) Newer versions of Raspberry Pi OS will not work with this image as it uses OMXPlayer to render the video, which was removed from Raspberry Pi OS with the release of the Bullseye version of the OS.
 
-The contents of `/etc/apt/sources.list` will need updating to match the following in oder for your APT installs and updates to work:
+If not running the `setup.sh` script, then the contents of `/etc/apt/sources.list` will need updating to match the following in order for your APT installs and updates to work:
 
 ```
-# deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+deb http://legacy.raspbian.org/raspbian/ buster main contrib non-free rpi
 # Uncomment line below then 'apt-get update' to enable 'apt-get source'
 #deb-src http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
-deb http://legacy.raspbian.org/raspbian/ buster main contrib non-free rpi
 ```
 
 <img src="pythonShutdownWiring_bb.png" alt="Wiring diagram for the python shutdown script" width="50%" height="50%" />
