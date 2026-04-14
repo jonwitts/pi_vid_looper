@@ -9,6 +9,14 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
+# update the sources.list file
+echo "Updating APT sources"
+echo "=========================="
+# comment out old repo
+sed -i.old -e 's|deb http://raspbian|# deb http://raspbian|g' /etc/apt/sources.list
+# add new repo to end of file
+sed -i.old2 -e "\$adeb http://legacy.raspbian.org/raspbian/ buster main contrib non-free rpi" /etc/apt/sources.list
+
 # update and upgrade existing packages
 echo "Upgrading existing packages"
 echo "=========================="
@@ -60,7 +68,9 @@ cd examples
 sudo ./install-service.sh --on-threshold 65 --off-threshold 55 --delay 2
 
 # up our GPU RAM
-echo "gpu_mem=512" >> /boot/config.txt
+echo "gpu_mem_256=128" >> /boot/config.txt
+echo "gpu_mem_512=384" >> /boot/config.txt
+echo "gpu_mem_1024=512" >> /boot/config.txt
 
 # done
 echo "Done. Rebooting now"
