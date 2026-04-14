@@ -1,5 +1,7 @@
 # Raspberry Pi Video Looper
-A Bash Video Looper for the Raspberry Pi 4 and a Python3 shutdown button and LED indicator
+A Bash Video Looper for the Raspberry Pi and a Python3 shutdown button and LED indicator.
+
+This script should work with most versions of the Raspberry Pi. It was been extensively tested with the Pi 4 and Pi Zero 2 W.
 
 To install either clone this repo to a Raspberry Pi with wifi setup on it and run setup.sh as root, or run this command:
 
@@ -13,6 +15,15 @@ Once everything is installed you can plug a USB stick into your Raspberry Pi wit
 
 To safely shut your Raspberry Pi down, press and hold the button for three seconds. You will then see the LED flash three times and your Pi will then safely shutdown. Just switch the power off and on again to restart your Video Looper!
 
-Tested against Raspbain Buster Lite. It should also work with the full Raspbian Buster but it makes more sense to use the Lite version as you will no doubt want to run this headless... You can get the last release of Raspbian Buster from here: [https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/](https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/)
+Tested against Raspbain Buster Lite. It should also work with the full Raspbian Buster but it makes more sense to use the Lite version as you will no doubt want to run this headless... You can get the last release of Raspbian Buster from here: [https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/](https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/)
+
+The contents of `/etc/apt/sources.list` will need updating to match the following in oder for your APT installs and updates to work:
+
+```
+# deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
+deb http://legacy.raspbian.org/raspbian/ buster main contrib non-free rpi
+```
 
 <img src="pythonShutdownWiring_bb.png" alt="Wiring diagram for the python shutdown script" width="50%" height="50%" />
