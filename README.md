@@ -7,7 +7,7 @@ This script should work with most versions of the Raspberry Pi. It was been exte
 To install either clone this repo to a Raspberry Pi with wifi setup on it and run setup.sh as root, or run this command:
 
 ```shell
-curl -L http://bit.ly/2YM6JSx | sudo bash
+curl -L https://bit.ly/pi-vid-looper | sudo bash
 ```
 
 N.B. It is generally not a good idea to pipe the output of a shortened URL straight into a root shell; but follow the link first and you will see it takes you to the setup.sh file and processes that for you!
