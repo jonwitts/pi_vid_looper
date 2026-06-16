@@ -1,11 +1,14 @@
 # Raspberry Pi Video Looper
+
 A Bash Video Looper for the Raspberry Pi and a Python3 shutdown button and LED indicator.
 
 This script should work with most versions of the Raspberry Pi. It was been extensively tested with the Pi 4 and Pi Zero 2 W.
 
 To install either clone this repo to a Raspberry Pi with wifi setup on it and run setup.sh as root, or run this command:
 
-    curl -L http://bit.ly/2YM6JSx | sudo bash
+```shell
+curl -L http://bit.ly/2YM6JSx | sudo bash
+```
 
 N.B. It is generally not a good idea to pipe the output of a shortened URL straight into a root shell; but follow the link first and you will see it takes you to the setup.sh file and processes that for you!
 
@@ -19,10 +22,10 @@ Tested against Raspbain Buster Lite. It should also work with the full Raspbian 
 
 If not running the `setup.sh` script, then the contents of `/etc/apt/sources.list` will need updating to match the following in order for your APT installs and updates to work:
 
-```
+```shell
 deb http://legacy.raspbian.org/raspbian/ buster main contrib non-free rpi
 # Uncomment line below then 'apt-get update' to enable 'apt-get source'
 #deb-src http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi
 ```
 
-<img src="pythonShutdownWiring_bb.png" alt="Wiring diagram for the python shutdown script" width="50%" height="50%" />
+![Wiring diagram for the button and LED for the python shutdown script](pythonShutdownWiring_bb.png)
